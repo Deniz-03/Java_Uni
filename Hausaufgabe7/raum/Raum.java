@@ -8,7 +8,7 @@ import gegner.Ork;
 /**
  * Das ist die Oberklasse für die verschiedenen Raumtypen im Textadventure.
  */
-public class Raum {
+public abstract class Raum {
     /**
      * Die Gegner die in dem Raum warten.
      */
@@ -46,13 +46,11 @@ public class Raum {
      * Diese Methode wird in den Unterklassen überschrieben und dient
      * der Polymorphie.
      * 
-     * @return string In diesem Fall ein leerer String, da keine 
-     *                unspezialisierten Raeume existieren.
+     * @return Ein String mit folgender Form:
+     *         '(naechsten) [Raumtyp] betreten'
      */
-    public String getOpt() {
-        return "";
-    }
-    
+    public abstract String getOpt();
+
     /**
      * Erzeugt 0-3 Orks für den Raum.
      */
